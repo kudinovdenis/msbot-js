@@ -73,6 +73,7 @@ bot.dialog('search', [
                 var msg = new builder.Message(session).attachments([card]);
                 session.send(msg);
             }, this);
+            session.endConversation("goodbye");
         })
     }
 ])
