@@ -39,9 +39,11 @@ bot.dialog('login', [
         request.post(loginURL, function(err, res, body) {
             if(err) {
                 console.log("ERROR: ", error);
+                return
             } 
             if(res.statusCode !== 200 ) {
                 console.log("WRONG STATUS CODE: ", res);
+                return
             }
             console.log("BODY: ", body);
             var tokenInfo = JSON.parse(body);
@@ -62,6 +64,14 @@ bot.dialog('search', [
             headers: headers
         }, 
         function(err, res, body) {
+            if(err) {
+                console.log("ERROR: ", error);
+                return
+            } 
+            if(res.statusCode !== 200 ) {
+                console.log("WRONG STATUS CODE: ", res);
+                return
+            }
             var files = JSON.parse(body);
             files.forEach(function(file) {
                 var card = new builder.HeroCard(session)
