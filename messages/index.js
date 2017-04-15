@@ -55,7 +55,7 @@ bot.dialog('search', [
     function(session, results) {
         var token = results;
         var headers = {
-            "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcmNoX25hbWUiOiJsYWxrYSIsImlhdCI6MTQ5MjI1MDk5NCwidXNlcl9pZCI6ImxhbGthIn0.31EIhix_46R3mS-hOB6Dv4VfCJdkXKG6xkOsHxvKR4I"
+            "Authorization" : "Bearer ".concat(token)
         }
         request.get({
             url: "http://52.166.64.155:8080/files/",
